@@ -7,5 +7,5 @@ RUN docker-php-ext-install pdo pdo_mysql mysqli
 RUN chown -R www-data:www-data /var/www
 #ONBUILD RUN sed -i "s|ipvariable|$MYSQLIP|g" /var/www/public/Generique/modele_generique.php 
 COPY entrypoint.sh /usr/local/bin/
-RUN chmod 777 /usr/local/bin/entrypoint.sh
+RUN chmod 555 /usr/local/bin/entrypoint.sh
 CMD ["entrypoint.sh"]
